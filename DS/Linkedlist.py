@@ -51,6 +51,7 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
                     return
                 temp=temp.nexp
 
+
     def pop(self):#removes the last element of the linkedlist
         last=self.first
         n=self.count
@@ -163,24 +164,24 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
         last=self.first
         while last.nexp!=None:
 
-           print(last.data)
+           print("element is",last.data,"nexp",last.nexp,"id is ",id(last.data))
 
            last=last.nexp
         print(last.data)
     def size(self):#returns the size of the linked list
         return self.count
 
-#a=Linkedlist()
-#a.add(10)
-#a.add(20)
-#a.add(30)
-#a.add(40)
-
-#a.display()
-#a.pop()
-#a.display()
-#a.pop(4)
-#a.remove(10)
-#a.display()
-#print(a.size())
+# a=Linkedlist()
+# a.add(10)
+# a.add(20)
+# a.add(30)
+# a.add(40)
+#
+# a.display()
+# #a.pop()
+# #a.display()
+# #a.pop(4)
+# a.remove(20)
+# a.display()
+# #print(a.size())
 
