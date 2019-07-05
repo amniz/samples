@@ -11,6 +11,16 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
         self.first=Node()
         print("self.first initially",self.first)
         self.count=0
+    # def __iter__(self):
+    #     self.i=0
+    #     return self
+    # def __next__(self):
+    #     temp=self.first.data
+    #     while self.i<self.count:
+    #         print (temp.data)
+    #         temp=temp.nexp
+    #         self.i+=1
+
     def add(self,data):      #for adding data to the linked list
         if self.first.data==None:
             self.first.data=data
@@ -149,29 +159,28 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
             self.count-=1
 
     def display(self):    #display method to print all the elements in the linked list
-        print("self.first in display",self.first)
-        print(self.count)
+
         last=self.first
         while last.nexp!=None:
 
            print(last.data)
-           print(last.nexp)
+
            last=last.nexp
         print(last.data)
     def size(self):#returns the size of the linked list
         return self.count
 
-a=Linkedlist()
-a.add(10)
-a.add(20)
-a.add(30)
-a.add(40)
+#a=Linkedlist()
+#a.add(10)
+#a.add(20)
+#a.add(30)
+#a.add(40)
 
 #a.display()
 #a.pop()
-a.display()
+#a.display()
 #a.pop(4)
-a.remove(10)
-a.display()
-print(a.size())
+#a.remove(10)
+#a.display()
+#print(a.size())
 

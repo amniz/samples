@@ -1,26 +1,27 @@
 import Linkedlist
-f=open("olakka.txt",'r')
-data=f.readlines()
+f=open("abc.txt","r")
+d=f.readlines()
+g=[]
+for x in d:
+    line=x.split()
+    g.extend(line)
 
-data1=f.read()
+l=Linkedlist.Linkedlist()
+n=input("enter the word to be searched for")
+flag=False
 
-def readw(data):
-    j=[]
+for i in g:
+    Linkedlist.Linkedlist.add(l,i)
+sil=Linkedlist.Linkedlist.size(l)
 
-    for i in data:
-        k=0
-        c=0
-        while k<len(i):
-            if i[k] == '\n':
-                m=i.replace('\n','')
-                while c < len(m):
+if Linkedlist.Linkedlist.search(l,n)==True:
+    Linkedlist.Linkedlist.remove(l,n)
 
-                    if m[c] == ' ':
-                        j.append(m.split(' '))
-                        break
 
-                    c += 1
-                break
+else:
+    print("element not found adding the element")
+    Linkedlist.Linkedlist.add(l,n)
+Linkedlist.Linkedlist.display(l)
 
-            k+=1
-    return j
+
+
