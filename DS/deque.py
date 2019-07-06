@@ -13,7 +13,6 @@ class Deque:
             first=first.prev
         print("adding data",data)
         first.prev=Dnode(data,first,None)
-        #first=first.prev
         self.count+=1
     def addRear(self,data):
         if self.count==0:
@@ -69,23 +68,31 @@ class Deque:
             last=last.nexp
         print(last.data)
         
-    def __main__():
+def main():
         q=Deque()
         l=Deque()
         s=input("enter the string")
         for i in s:
             q.addFront(i)
             l.addRear(i)
-h=Deque()
-h.addFront('a')
-h.addFront('p')
-h.addRear('z')
-print(h.size())
-h.removeFront()
-h.removeRear()
-h.addFront
-h.display()
-    
+        q.display()
+        l.display()
+        le=q.size()
+        while le>0:
+            if q.dq.data==l.dq.data:
+                l.removeRear()
+                q.removeFront()
+                q=q.nexp
+                l=l.prev
+                
+            else:
+                break
+        if isEmpty==True:
+            print("palindrome")
+        else:
+            print("Not a Palindrome")
+if __name__=='__main__':
+        main()
             
         
         
