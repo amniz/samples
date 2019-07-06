@@ -171,17 +171,17 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
     def size(self):#returns the size of the linked list
         return self.count
 
-# a=Linkedlist()
-# a.add(10)
-# a.add(20)
-# a.add(30)
-# a.add(40)
-#
+a=Linkedlist()
+a.add(10)
+a.add(20)
+a.add(30)
+a.add(40)
+
+a.display()
+# a.pop()
 # a.display()
-# #a.pop()
-# #a.display()
-# #a.pop(4)
-# a.remove(20)
-# a.display()
+# a.pop(4)
+a.remove(30)
+a.display()
 # #print(a.size())
 
