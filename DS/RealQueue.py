@@ -27,6 +27,20 @@ class Queue:
             print(l.data)
             l=l.nexp
         print(l.data)
+    def displayforcal(self):
+        c=self.count
+        print(c)
+        last=self.first
+        while c>0:
+            br=0
+            while br<7:
+                br+=1
+                c-=1
+                print(last.data," ",end="")
+                last=last.nexp
+            print()
+                
+                
 #q=Queue()
 #q.add(1)
 #q.add(2)

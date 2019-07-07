@@ -1,4 +1,5 @@
 from Linkedlist import Linkedlist
+from RealQueue import Queue
 def daysofWeek(mon,yea):
     m=mon
     d=1
@@ -33,66 +34,29 @@ def monthDay(m,y):
     else:
         return 32 
     
-class WeekDay:
-    def __init__(self):
-        self.week=Linkedlist()
-    def pop(self,index):#poping at the specified position
-        last=self.week
-        if index==1:#poping at the first position
-            self.week=self.week.first.nexp
-            self.week.count-=1
-            return self.week.frist.data
-        elif index>1 and index<self.week.count:#poping at the position between first and last
-            co=2
-            c=2
-            temp=self.week.first
-            while c<=index:
 
-                temp=temp.nexp
-                c += 1
-
-            while co<index:
-                
-
-                last=last.nexp
-                co += 1
-            
-            last.nexp=temp.nexp
-            #self.week.count-=1
-            return temp.data
-        else:#poping at the position of last
-            i=2
-            last=self.week.first
-            while i<self.week.count:
-                last=last.nexp
-                i+=1
-            dat=last.data
-            last.nexp=None
-            #self.week.count-=1
-            return dat
-        
     
     
-a=WeekDay()
-a.week.add('S')
-a.week.add('M')
-a.week.add('T')
-a.week.add('W')
-a.week.add('Th')
-a.week.add('F')
-a.week.add('S')
+a=Queue()
+a.add('S')
+a.add('M')
+a.add('T')
+a.add('W')
+a.add('Th')
+a.add('F')
+a.add('S')
 k=daysofWeek(2,2007)
 j=monthDay(2,2007)
 j1=1
 while k>0:
-    a.week.add(" ")
+    a.add(" ")
     k-=1
-
+m=1
 while j>0:
-    a.week.add(j1)
-    j1+=1
+    a.add(m)
+    m+=1
     j-=1
-while j<23:
-    print(a.pop(j))
-    j+=1
+a.displayforcal()
+
+
     

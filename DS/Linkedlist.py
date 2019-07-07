@@ -142,8 +142,7 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
                 c += 1
 
             while co<index:
-                print("co",co)
-                print("index",index)
+                
 
                 last=last.nexp
                 co += 1
