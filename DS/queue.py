@@ -3,7 +3,7 @@ class Node:
         self.data=data
         self.nexp=nexp
 class Queue:
-    
+    bal=10000000
     def __init__(self):
         self.q=Node()
         self.count=0
@@ -43,11 +43,9 @@ class Queue:
 
            last=last.nexp
         print(last.data)
-class Bank:
-    bal=1000000
-    def check(cls):
+    def check(self):
         print("in check")
-        a.enqueue()
+       
         fw=int(input("1->deposit\n2->withdrawl"))
         if fw==1:
             damnt=int(input("enter the amount to be deposited"))
@@ -57,32 +55,21 @@ class Bank:
             if ch==True:
                 check()
             else:
-                a.dequeue()
+                
                 return
         elif fw==2:
             wamnt=int(input("enter the amount to be withdrawn"))
-            if wmnt<bal-5000:
+            if wmnt<bal-5000 and self.data>=wamnt:
                 a.data-=wmnt
                 bal-=wmnt
                 ch=bool(input("do you wish to continue for an another transaction"))
                 if ch==True:
                     check()
                 else:
-                    a.deque()
                     return
-    def __init__(self):
-        self.a=Queue()
-        check()
     
-            
-B=Bank()
-    #def __main__():
-    #    check()
-    #print(__name__)   
-    #if __name__=='__main__':
-    #    print("hai")
-    #    __main__()
-        
+
+
                     
         
     

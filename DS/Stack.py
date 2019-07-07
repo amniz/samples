@@ -35,6 +35,7 @@ class stack:
                 print(m,"m")
                 print(len(i))
                 print("inside")
+                print
                 if i[ke]=='(':
                     print("olakka")
                     self.push('(')
