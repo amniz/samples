@@ -1,28 +1,48 @@
-from Linkedlist import Linkedlist
+
+class Node:          #Node classs for storing data of the node
+    def __init__(self,data=None,nexp=None):
+        self.data=data
+        self.nexp=nexp
 class Stack:
     def __init__(self):
-        self.ele=Linkedlist()
+        self.first=Node()
+        self.count=0
     def add(self,data):
-        self.ele.add(data)
+        if self.first.data==None:
+            self.first.data=data
+            self.first.nexp=None
+            self.count+=1
+        else:
+            last=self.first     
+            while last.nexp!=None:     
+                last=last.nexp
+            last.nexp=Node(data,None)
+            self.count+=1
     def pop(self):
-        self.ele.pop()
-    def disp(self):
-        l=self.ele.first
-        tem=self.ele.first
-        h=self.ele.size()
-        while h>0:
-            c=0
-            while l.nexp!=None:
-                l=l.nexp
-                c+=1
-            print("disp",l.data)
+        if self.count==1:
+            self.first=None
+            return
+        last=self.first
+        
+        c=self.count
+        while c>2:
+            c-=1
+            last=last.nexp
             
-            while c>1:
-                tem=tem.nexp
-            tem.nexp=None
-            h-=1
-a=Stack()
-a.add(10)
-a.add(2)
-a.add(5)
-a.disp()
+        last.nexp=None
+    def display(self):
+        l=self.first
+        if self.count==1:
+            return 
+        while l.nexp!=None:
+            print(l.data)
+            l=l.nexp
+        print(l.data)
+s=Stack()
+s.add(10)
+s.add(2)
+#s.add(3)
+s.pop()
+s.display()
+            
+            
