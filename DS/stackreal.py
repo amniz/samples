@@ -21,6 +21,7 @@ class Stack:
     def pop(self):
         if self.count==1:
             self.first=None
+            self.count-=1
             return
         last=self.first
         
@@ -30,6 +31,7 @@ class Stack:
             last=last.nexp
             
         last.nexp=None
+        self.count-=1
     def display(self):
         l=self.first
         if self.count==1:
@@ -38,11 +40,25 @@ class Stack:
             print(l.data)
             l=l.nexp
         print(l.data)
-s=Stack()
-s.add(10)
-s.add(2)
+    def revdisp(self):
+        
+        c=self.count
+        while c>0:
+            last=self.first
+            n=1
+            m=0
+            while n<c:
+                last=last.nexp
+                n+=1
+                m+=1
+            print(last.data)
+            c-=1
+        
+#s=Stack()
+#s.add(10)
+#s.add(2)
 #s.add(3)
-s.pop()
-s.display()
+#s.pop()
+#s.display()
             
             

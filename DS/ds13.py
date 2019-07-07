@@ -18,7 +18,7 @@ def isPrime():
         return l
 l=isPrime()
 
-from Linkedlist import Linkedlist
+from stackreal import Stack
 def checkana(l):
     ana=set()
     cou=0
@@ -33,11 +33,12 @@ def checkana(l):
                 ana.add(j)
         cou+=1
     return ana
+
 pa=checkana(l)
 j=sorted(pa)
-print(j)
-lo=Linkedlist()
+lo=Stack()
 for i in j:
     lo.add(i)
-lo.display()
+lo.revdisp()
+    
 
