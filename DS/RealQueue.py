@@ -29,16 +29,24 @@ class Queue:
         print(l.data)
     def displayforcal(self):
         c=self.count
-        print(c)
+        print("c",c)
         last=self.first
+        ones=0
         while c>0:
             br=0
             while br<7:
-                br+=1
-                c-=1
-                print(last.data," ",end="")
-                last=last.nexp
+                if ones==1 or ones ==2 and  int(last.data)<10:
+                    print(last.data,"  ",end="")
+                    br+=1
+                    c-=1
+                    last=last.nexp
+                else:
+                    br+=1
+                    c-=1
+                    print(last.data," ",end="")
+                    last=last.nexp
             print()
+            ones+=1
                 
                 
 #q=Queue()
