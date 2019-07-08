@@ -22,7 +22,7 @@ class Stack:
         if self.count==1:
             self.first=None
             self.count-=1
-            return
+            return 
         last=self.first
         
         c=self.count
@@ -32,6 +32,21 @@ class Stack:
             
         last.nexp=None
         self.count-=1
+##    def pop(self):
+##        if self.count==1:
+##            dat=self.first.data
+##            self.first=None
+##            self.count-=1
+##            return dat
+##        last=self.first
+##        
+##        c=self.count
+##        while c>2:
+##            c-=1
+##            last=last.nexp
+##            
+##        last.nexp=None
+##        self.count-=10
     def display(self):
         l=self.first
         if self.count==1:
