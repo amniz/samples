@@ -24,7 +24,7 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
     def add(self,data):      #for adding data to the linked list
         if self.first.data==None:
             self.first.data=data
-            self.first.nexp=None
+            #self.first.nexp=None
             self.count+=1
         else:
             last=self.first     #making a temporary variable for traversal and insertion purposes
@@ -158,29 +158,29 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
             last.nexp=None
             self.count-=1
 
-    def display(self):    #display method to print all the elements in the linked list
-
+    def display(self):#display method to print all the elements in the linked list
         last=self.first
+        print("disp last",last)
         while last.nexp!=None:
 
-           print("element is",last.data,"nexp",last.nexp,"id is ",id(last.data))
+           print("element is",last.data)
 
            last=last.nexp
         print(last.data)
     def size(self):#returns the size of the linked list
         return self.count
 
-a=Linkedlist()
-a.add(10)
-a.add(20)
-a.add(30)
-a.add(40)
-
-a.display()
-# a.pop()
-# a.display()
-# a.pop(4)
-a.remove(30)
-a.display()
-# #print(a.size())
+###a=Linkedlist()
+##a.add(10)
+##a.add(20)
+##a.add(30)
+##a.add(40)
+##
+##a.display()
+### a.pop()
+### a.display()
+### a.pop(4)
+##a.remove(30)
+##a.display()
+### #print(a.size())
 

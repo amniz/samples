@@ -36,35 +36,38 @@ def monthDay(m,y):
     
 
     
-    
-a=Queue()
-a.add('S')
-a.add('  M')
-a.add(' T')
-a.add(' W')
-a.add(' Th')
-a.add('F')
-a.add('S')
-k=daysofWeek(2,2007)
-j=monthDay(2,2007)
-j1=1
-w=0
-while k>0:
-    a.add(" ")
-    k-=1
-    w+=1
-m=1
+def make():    
+    a=Queue()
+    a.add('S')
+    a.add('  M')
+    a.add(' T')
+    a.add(' W')
+    a.add(' Th')
+    a.add('F')
+    a.add('S')
+    k=daysofWeek(2,2007)
+    j=monthDay(2,2007)
+    j1=1
+    w=0
+    while k>0:
+        a.add(" ")
+        k-=1
+        w+=1
+    m=1
 
 
-while j>0:
-    a.add(m)
-    m+=1
-    j-=1
-    w+=1
-while w<=55:
-    a.add(" ")
-    w+=1
-a.displayforcal()
+    while j>0:
+        a.add(m)
+        m+=1
+        j-=1
+        w+=1
+    while w<=55:
+        a.add(" ")
+        w+=1
+    return a
 
+def todis():
+    g=make()
+    g.displayforcal()
 
     

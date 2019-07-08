@@ -1,4 +1,4 @@
-import Linkedlist
+from Linkedlist import Linkedlist
 f=open("abc.txt","r")
 d=f.readlines()
 g=[]
@@ -7,24 +7,26 @@ for x in d:
     g.extend(line)
 
 
-l=Linkedlist.Linkedlist()
-m=Linkedlist.Linkedlist()
+l=Linkedlist()
+m=Linkedlist()
 n=input("enter the word to be searched for")
 flag=False
 
 for i in g:
-    Linkedlist.Linkedlist.add(l,i)
+    l.add(i)
 l.display()
-sil=Linkedlist.Linkedlist.size(l)
+print("init",l.size())
+sil=l.size()
 t=l
-if Linkedlist.Linkedlist.search(t,n)==True:
-    m=Linkedlist.Linkedlist.remove(t,n)
+if l.search(n)==True:
+    l.remove(n)
 
 
 else:
     print("element not found adding the element")
-    Linkedlist.Linkedlist.add(l,n)
-m.display()
-
+    l.add(n)
+    l.display()
+l.display()
+print("last",l.size())
 
 
