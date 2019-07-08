@@ -61,18 +61,36 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
         last.nexp=None
     def search(self,data):#searches an element in the linked list and return whether the element is present in the linked list or not
         co=0
-        while self.first.nexp!=None:#checking till the element before the last element
-            if self.first.data==data:
+        l=self.first
+        while l.nexp!=None:#checking till the element before the last element
+            if l.data==data:
                 break
             else:
                 co+=1
-                self.first=self.first.nexp
-        if self.first.data==data:#checking the last element is the given data
+                l=l.nexp
+        if l.data==data:#checking the last element is the given data
             return True
         if co<=self.count-2:
            return True
         else:
            return False
+    def searchpos(self,data):#works only for sorted list
+        l=self.first
+        c=1
+        if l.data==data:
+            return c
+        while l.nexp!=None:
+            if l.data<=data:
+                c+=1
+                print(l.data)
+                l=l.nexp
+            else:
+                return c
+        if l.data<=data:
+            return c+1
+        else:
+            return c
+        
 
     def isEmpty(self):#return the list empty or not
         if self.count==0:
@@ -170,12 +188,14 @@ class Linkedlist:      #Linked list class key purpose is to make an object of th
     def size(self):#returns the size of the linked list
         return self.count
 
-###a=Linkedlist()
+##a=Linkedlist()
 ##a.add(10)
 ##a.add(20)
 ##a.add(30)
 ##a.add(40)
-##
+##a.add(70)
+##r=a.searchpos(67)
+##print(r)
 ##a.display()
 ### a.pop()
 ### a.display()
