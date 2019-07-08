@@ -5,7 +5,7 @@ class stack:
         self.data=[input("enter the eqation")]
         self.count=0
     def push(self,data):
-        print("called push")
+        
         k=self.arr
         self.arr.append(data)
         self.count+=1
@@ -23,31 +23,31 @@ class stack:
         return self.arr[0]
     def check(self):
         j=self.data
-        print(type(j))
-        print(j)
+       
         ke=0
-        print(j[0][0])
+        
         for i in j:
-            print("i",i)
-            print(type(i))
+            
             m=0
             while m<len(i):
-                print(m,"m")
-                print(len(i))
-                print("inside")
-                print
-                if i[ke]=='(':
-                    print("olakka")
+                
+                
+                if i[m]=='(':
+                    
                     self.push('(')
+                    
                     ke+=1
                     m+=1
-                elif i[ke]==')':
-                    pop('(')
+                    continue
+                elif i[m]==')':
+                    
+                    self.pop('(')
                     ke+=1
                     m+=1
+                    continue
                 m+=1
                 ke+1
-        print(self.isempty())
+        print("is it a balanced equation: ",self.isempty())
 a=stack()
 a.check()
         
