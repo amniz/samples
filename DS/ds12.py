@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose: prime numbers in specific range using 2d array.
 def isPrime():
         l=[]
         for i in range(10,1000):

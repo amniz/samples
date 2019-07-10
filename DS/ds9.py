@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose: prints the claender using queue
 from Linkedlist import Linkedlist
 from RealQueue import Queue
 def daysofWeek(mon,yea):

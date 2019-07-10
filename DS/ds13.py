@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:python 3
+#@purpose: check for the anagram and printing it using the reverse order using stack
 def isPrime():
         l=[]
         for i in range(10,1000):

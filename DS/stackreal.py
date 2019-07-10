@@ -1,4 +1,6 @@
-
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose:implementation of stack using linked list
 class Node:          #Node classs for storing data of the node
     def __init__(self,data=None,nexp=None):
         self.data=data

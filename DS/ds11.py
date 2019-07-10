@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose: prime numbers in the range of 0-1000 using 2d array
 def isPrime(min,max):
         l=[]
         #n=int(input("enter the number "))

@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose:chcking for balanced aquation using stack
 import array
 class stack:
     def __init__(self):

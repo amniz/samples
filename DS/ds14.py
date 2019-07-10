@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose: prime numbers in range of 0-1000 using queue
 from RealQueue import Queue
 def isPrime():
         l=[]

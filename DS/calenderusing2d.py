@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose: prints the claender of a given date using a 2d array.
 def daysofWeek(mon,yea):
     m=mon
     d=1

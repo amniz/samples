@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose:implementation of queue using linked list
 class Node:
     def __init__(self,data=None,nexp=None):
         self.data=data

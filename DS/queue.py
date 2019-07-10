@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose:stimulation of banking counter using queue
 from random import randint
 class Node:
     def __init__(self, data=None, nexp=None):

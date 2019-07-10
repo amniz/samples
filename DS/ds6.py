@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose: hashing and adding the elements to the linked list.
 class Node:
     def __init__(self,data=None,nexp=None,newnode=None):
         self.data=data

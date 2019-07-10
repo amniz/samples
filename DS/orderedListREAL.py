@@ -1,4 +1,9 @@
-from Linkedlist import Linkedlist
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose:Read .a List of Numbers from a file and arrange it ascending Order in a
+#Linked List. Take user input for a number, if found then pop the number out of the
+#list else insert the number in appropriate position
+#from Linkedlist import Linkedlist
 f=open("abcnum.txt",'r')
 data=f.readlines()
 s1=[]
