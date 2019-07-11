@@ -4,11 +4,11 @@
 
 import sys
 def monthlyPayment():
-    P=int(sys.argv[1])
-    Y=int(sys.argv[2])
-    R=int(sys.argv[3])
-    n=12*Y
+    P=int(sys.argv[1])#getting the parameters from the command line
+    Y=int(sys.argv[2]))#getting the parameters from the command line
+    R=int(sys.argv[3])#getting the parameters from the command line
+    n=12*Y)
     r=R/(12*100)
     pay=(P*r)/(1-(1+r)**(-n))
     print(pay)
-monthlyPayment()
+monthlyPayment()#calculating and finding the amount

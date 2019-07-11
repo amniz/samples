@@ -4,10 +4,10 @@
 
 from util import util
 
-l1=util.isPrime()
+l1=util.isPrime()#checking the number is prime or not
 set1=set()
 set2=set()
-def rev(l):
+def rev(l):#reversing and checking for palindrome
     for i in l:
         
         j=i
@@ -21,7 +21,7 @@ def rev(l):
             j=j//10
             
         set1.add(val)
-def rev1(l):
+def rev1(l):#reversing and checking for anagram
     
     for i in l:
         j=i
