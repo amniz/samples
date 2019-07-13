@@ -6,6 +6,6 @@ try:
     n=int(input("give the number of coupons to be generated"))
 except:
     n=int(input("please do enter a integer"))
-from util import coupon#importing coupon generator
+from Functional.util import coupon#importing coupon generator
 j=coupon(n)#getting the generated coupons
 print(j)

@@ -11,7 +11,7 @@ except ValueError:
 row=int(input("enter the number of rows"))#getting number of rows
 col=int(input("enter the number of columns"))#getting number of columns
 a=[]
-from util import Boolea,Inte,Floa
+from Functional.util import Boolea,Inte,Floa
 
 if n==1:#getting the input from the user and checking it
     Boolea(row,col)

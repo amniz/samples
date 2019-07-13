@@ -2,8 +2,8 @@
 #@version:3.7
 #@purpose: prints the calender using queue
 from Linkedlist import Linkedlist
-from RealQueue import Queue
-from util import util
+from DS.RealQueue import Queue
+from DS.util import util
 
 
 class weekDay:

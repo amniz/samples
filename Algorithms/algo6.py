@@ -2,7 +2,7 @@
 #@version:3.7
 #@purpose:> Read in a list of words from File. Then prompt the user to enter a word to
 #search the list. The program reports if the search word is found in the list.
-from util import util#importing from util
+from Algorithms.util import util#importing from util
 try:
     with open("abc.txt","r") as file:#reading the file
         d=file.readlines()

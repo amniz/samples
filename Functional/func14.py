@@ -3,7 +3,7 @@
 #@version:3.7
 #@purpose:TicTacToe
 import random
-from util import check,disptic
+from Functional.util import check,disptic
 li=[[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]#creating an empty list
 
 #print("id of li in normal",id(li))
@@ -26,7 +26,7 @@ while n>0:#playing the game
             li[row][col]='x'
             n-=1
             disptic(li)#dispalying theelements
-            #check(li,n)
+                #check(li,n)
         else:
             print("its already selected enter another one")
     else:#chance for comp

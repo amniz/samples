@@ -1,7 +1,8 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: prime numbers in range of 0-1000 using queue
-from RealQueue import Queue
+from DS.RealQueue import Queue
+from DS.util import util
 
 l=util.isPrime()
 

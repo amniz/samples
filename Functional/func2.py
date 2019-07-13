@@ -1,7 +1,7 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: Flip Coin and print percentage of Heads and Tails
-from util import randmgen
+from Functional.util import randmgen
 try:#ensuring the person enters a number
 	n=int(input("enter the number of times you need to flip the coin"))
 except ValueError:

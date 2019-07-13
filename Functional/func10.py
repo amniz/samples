@@ -5,7 +5,7 @@ try:
 	n=int(input("enter the number of elements"))
 except ValueError:
 	n=int(input("please do enter the integer elements"))
-from util import triplets
+from Functional.util import triplets
 trip=triplets(n)#calling triplets function
 print("distict triplets are",trip)
 print("distict triplets are",len(trip))

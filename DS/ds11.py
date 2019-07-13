@@ -1,7 +1,7 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: prime numbers in the range of 0-1000 using 2d array
-from util import util
+from DS.util import util
 r=[]
 for i in range(0,1000,100):
     k=util.isPrime(i,i+100)

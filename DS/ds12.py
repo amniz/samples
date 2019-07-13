@@ -1,7 +1,7 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: prime numbers in specific range using 2d array.
-from util import util
+from DS.util import util
 l=util.isPrime()#getting the prime numbers
 
 

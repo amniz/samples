@@ -6,6 +6,6 @@ try:
 	n=int(input("enter the value"))
 except ValueError:
 	n=int(input("please do enter a integer"))
-from util import harmon
+from Functional.util import harmon
 k=harmon(n)
 print("sum=",k)

@@ -3,8 +3,8 @@
 #@purpose:i. Swap nibbles and find the new number.
 	  #ii. Find the resultant number is the number is a power of 2. 
 
-from toBinary import tobin
-f=toBinary.tobin()#claiing tobin function to change the number to binary
+from Algorithms.util import util
+f=util.tobin(int(input("enter the number")))#claiing tobin function to change the number to binary
 print(f)
 j=1
 i=0
@@ -25,7 +25,7 @@ print(k)
 b=31
 sumc=int()
 for i in k:
-    print(i)
+    #print(i)
     if i=='1':#getting the decimal equalent of the swapped number
         sumc+=2**b
         b-=1

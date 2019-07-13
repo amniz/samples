@@ -9,9 +9,9 @@ class util:
     ####################################################################################################################
     #@purpose:Anagram Detection
     @staticmethod
-    def anagram():
-            str1=input("enter string 1")
-            str2=input("enter string 2")
+    def anagram(str1,str2):
+            #str1=input("enter string 1")
+            #str2=input("enter string 2")
             sort1=sorted(str1)
             sort2=sorted(str2)
             if sort1==sort2:
@@ -78,8 +78,8 @@ class util:
                     set2.add(val)
             return set2
     #################################################################################################################################
-    #@purpose: Binary Search the Word from Word List
-    @staticmethod
+
+
     def BinarySearch(a,h,l,k):
 
         if h>=l:
@@ -105,16 +105,18 @@ class util:
                 l[j+1]=l[j]
                 j-=1
             l[j+1]=key
+        return l
     ###################################################################################################################################
     #@purpose:BubbleSort
     @staticmethod
-    def Insertionsort(l):
+    def BubbleSort(l):
         for i in range(1,len(l)):
             for j in range(0,len(l)-i):
                 if l[j]>l[j+1]:
                     temp=l[j]
                     l[j]=l[j+1]
                     l[j+1]=temp
+        return l
     #############################################################################################################################
     def daysofWeek(m,d,y):
 
@@ -143,12 +145,12 @@ class util:
     ##########################################################################
     def monthlyPayment(P,Y,R):
 
-        n=12*Y)
+        n=12*Y
         r=R/(12*100)
         pay=(P*r)/(1-(1+r)**(-n))
         return pay
 ###############################################################################
-    def tobin(# NOTE: ):
+    def tobin(n):
 
         st=str()
         while n>=1:

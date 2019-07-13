@@ -1,7 +1,7 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: Determine if it is a Leap Year
-from util import leapyear
+from Functional.util import leapyear
 try:
 	n=int(input("enter a number which is four digit"))
 except ValueError:

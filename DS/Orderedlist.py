@@ -4,7 +4,7 @@
 #Take a user input to search a Word in the List. If the Word is not found then add it
 #to the list, and if it found then remove the word from the List. In the end save the
 #list into a file.
-from Linkedlist import Linkedlist
+from DS.Linkedlist import Linkedlist
 try:
     f=open("abc.txt","r")#reading from file
     d=f.readlines()

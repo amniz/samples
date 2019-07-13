@@ -1,9 +1,11 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: Reads in integers prints them in sorted order using Bubble Sort 
-from util import util
+from Algorithms.util import util
 n=int(input("enter the number of elements"))
+arr=[]
 while n>0:#ensuring user gives an input
 	arr.append(input("enter the element"))
 	n-=1
-util.Bubblesort(arr)#calling bubble sort
+k=util.BubbleSort(arr)#calling bubble sort
+print(k)

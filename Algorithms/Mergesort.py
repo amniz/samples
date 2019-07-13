@@ -1,3 +1,6 @@
+#@author:Muhammed Nisamudheen
+#@version:3.7
+#@purpose:Mergesort
 def Merge(a,b,arr):
     print("in merge")
     print("input for merge a",a)
@@ -16,16 +19,18 @@ def Merge(a,b,arr):
             arr.insert(count,b[j])
             j+=1
             count+=1
-    #while i<len(a):
-        #arr.insert(count,a[i])
-        #i+=1
-        #count+=1
-    #while j<len(b):
-        #arr.insert(count,b[j])
-        #count+=1
-        #j+=1
+    while i<len(a):
+        arr.insert(count,a[i])
+        i+=1
+        count+=1
+    while j<len(b):
+        arr.insert(count,b[j])
+        count+=1
+        j+=1
 
 def Sort(arr):
+    if len(arr)==1:
+        return
     l=0
     h=len(arr)
     mid=(l+h)/2
@@ -37,13 +42,13 @@ def Sort(arr):
             #print("inside first")
             a.append(arr[i])
             i+=1
-        j=0
+
         while i<h:
             #print("inside second")
             #print(i)
             b.append(arr[i]) 
             i+=1
-            j+=1
+
         print(a)
         print(b)
         Sort(a)
