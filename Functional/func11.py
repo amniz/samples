@@ -4,8 +4,8 @@
 import sys
 import math
 
-n=int(sys.argv[1])
+n=int(sys.argv[1])#getting the input through command line
 n1=int(sys.argv[2])
 
-distance=math.sqrt(n**n+n1**n1)
+distance=math.sqrt(n**n+n1**n1)#calculating using the formula
 print(distance)

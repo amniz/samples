@@ -2,8 +2,12 @@
 #@version:3.7
 #@purpose:Computes the prime factorization of N using brute force. 
 
+try:
+	n=int(input("enter the number to find the prime factors"))
+except ValueError:
+	n=int(input("please do enter an integer value"))
+	
 
-n=int(input("enter the number to find the prime factors"))
 i=2
 while i*i<=n:
     t=2
