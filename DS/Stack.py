@@ -2,29 +2,29 @@
 #@version:3.7
 #@purpose:chcking for balanced aquation using stack
 import array
-class stack:
+class stack:#specifically made the stack class for checking the balanced paratnthesis
     def __init__(self):
-        self.arr=array.array('u',"")
+        self.arr=array.array('u',"")#initializing the array
         self.data=[input("enter the eqation")]
         self.count=0
-    def push(self,data):
+    def push(self,data):#pushing the elements to the array
         
         k=self.arr
         self.arr.append(data)
         self.count+=1
-    def pop(self,data):
+    def pop(self,data):#poping out the elements from the array
         j=self.arr.remove(data)
         self.count-=1
-    def isempty(self):
+    def isempty(self):#checking whether the stack is empty or not
         if self.count==0:
             return True
         else:
             return False
-    def size(self):
+    def size(self):#checking the size of the array
         return len(self.arr)
-    def peak(self):
+    def peak(self):#checking for the top most element
         return self.arr[0]
-    def check(self):
+    def check(self):#function to push and pop the '(' from stack
         j=self.data
        
         ke=0

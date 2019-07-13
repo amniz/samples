@@ -1,15 +1,15 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose:implementation of queue using linked list
-class Node:
+class Node:#creating node class
     def __init__(self,data=None,nexp=None):
-        self.data=data
-        self.nexp=nexp
+        self.data=data#data attribute
+        self.nexp=nexp#next pointer attribute
 class Queue:
     def __init__(self):
-        self.first=Node()
+        self.first=Node()#creating the node 
         self.count=0
-    def add(self,data):      
+    def add(self,data):#adding elements to the node      
         if self.first.data==None:
             self.first.data=data
             self.first.nexp=None
@@ -20,17 +20,17 @@ class Queue:
                 last=last.nexp
             last.nexp=Node(data,None)
             self.count+=1
-    def pop(self):
+    def pop(self):#removing first element from the queue
         first=self.first.nexp
         self.first=first
         self.count-=1
-    def display(self):
+    def display(self):#displaying the elements in the queue
         l=self.first
         while l.nexp!=None:
             print(l.data)
             l=l.nexp
         print(l.data)
-    def displayforcal(self):
+    def displayforcal(self):#specifically displaying for the calender 
         c=self.count
         print("c",c)
         last=self.first

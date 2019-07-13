@@ -3,13 +3,13 @@
 #@purpose:implementation of stack using linked list
 class Node:          #Node classs for storing data of the node
     def __init__(self,data=None,nexp=None):
-        self.data=data
-        self.nexp=nexp
+        self.data=data#making the data attribute
+        self.nexp=nexp#attribute which points towards the next data element
 class Stack:
     def __init__(self):
-        self.first=Node()
+        self.first=Node()#creating a node element
         self.count=0
-    def add(self,data):
+    def add(self,data):#adding the element to the end of the stack
         if self.first.data==None:
             self.first.data=data
             self.first.nexp=None
@@ -20,7 +20,7 @@ class Stack:
                 last=last.nexp
             last.nexp=Node(data,None)
             self.count+=1
-    def pop(self):
+    def pop(self):#poping out from the stack
         if self.count==1:
             self.first=None
             self.count-=1
@@ -49,7 +49,7 @@ class Stack:
 ##            
 ##        last.nexp=None
 ##        self.count-=10
-    def display(self):
+    def display(self):#display method to display the elements in the stack
         l=self.first
         if self.count==1:
             return 
@@ -57,7 +57,7 @@ class Stack:
             print(l.data)
             l=l.nexp
         print(l.data)
-    def revdisp(self):
+    def revdisp(self):#reverse display method to display the elements reverse in the stack
         
         c=self.count
         while c>0:

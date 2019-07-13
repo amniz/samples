@@ -14,7 +14,7 @@ class Queue:
     def __init__(self):
         self.q = Node()
         self.count = 0
-    def enqueue(self, data=None):
+    def enqueue(self, data=None):#adding the poeple into the queue
         last = self.q
         if self.count == 0:
 
@@ -28,19 +28,19 @@ class Queue:
             last.nexp = Node(data)
             self.count += 1
 
-    def deque(self):
+    def deque(self):#removing the people from the queue
         dat = self.q.data
         self.q = self.q.nexp
         self.count -= 1
         return dat
 
-    def isempty(self):
+    def isempty(self):#checking whether the queue is empty
         if self.count == 0:
             return True
         else:
             return False
 
-    def size(self):
+    def size(self):#checking the size of the queue
         return self.count
 
     def display(self):  # display method to print all the elements in the linked list
@@ -60,22 +60,22 @@ class Queue:
     def check(self, cls):
         flag = True
         if flag:
-            n = input("is there anyone on the queue")
+            n = input("is there anyone on the queue")#checking whether ayone is there in the queue
             if n == 'True':
-                self.enqueue(10)
-                fw = int(input("1->deposit\n2->withdrawl"))
+                self.enqueue(10)#adding the person in the queue
+                fw = int(input("1->deposit\n2->withdrawl"))#checking the purpose
                 if fw == 1:
                     damnt = int(input("enter the amount to be deposited"))
-                    cls.bal += damnt
+                    cls.bal += damnt#incrementing the bank bal
                     print(cls.bal)
-                    self.q.data += damnt
+                    self.q.data += damnt#incrementing the person bal
                     print(self.q.data)
                     ch = bool(input("do you wish to continue for an another transaction"))
                     if ch == True:
                         self.check(self,cls)
                     else:
                         self.deque()
-                        flag = bool(input("is anyone in the queue"))
+                        flag = bool(input("is anyone in the queue"))#checking is there someone else in queue
                         if flag:
                             self.check(self,cls)
                         else:
@@ -85,21 +85,21 @@ class Queue:
                     self.q.data=preva
                     print(preva)
                     wamnt = int(input("enter the amount to be withdrawn"))
-                    if wamnt < cls.bal - 5000 and wamnt<preva:
-                        self.q.data -= wamnt
+                    if wamnt < cls.bal - 5000 and wamnt<preva:#checking the amount he can with draw
+                        self.q.data -= wamnt#deducting the amount from his account
                         print(self.q.data)
-                        cls.bal -= wamnt
+                        cls.bal -= wamnt#deducting the amount from the bank bal
                         ch = bool(input("do you wish to continue for an another transaction"))
                         if ch == True:
                             self.check(self,cls)
                         else:
                             self.deque()
                             flag = bool(input("is anyone in the queue"))
-                            if flag:
+                            if flag:#checking is there anyone in the queue
                                 self.check(self,cls)
                             else:
                                 return
-                    else:
+                    else:#failed transaction if the person doesnot have the enough balanance
                         print("transaction failed not enough bal")
             else:
                 return
@@ -107,15 +107,3 @@ class Queue:
 
 w = Queue()
 w.check(w, Queue)
-
-    
-
-
-                    
-        
-    
-    
-            
-                
-
-

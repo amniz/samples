@@ -5,34 +5,37 @@
 #to the list, and if it found then remove the word from the List. In the end save the
 #list into a file.
 from Linkedlist import Linkedlist
-f=open("abc.txt","r")
-d=f.readlines()
+try:
+    f=open("abc.txt","r")#reading from file
+    d=f.readlines()
+except FileNotFoundError:
+    lr="hai hello how are you"
+    f=open("abc.txt","w")#if file not present creating a new one
+    wr=f.write(lr)
 g=[]
 for x in d:
     line=x.split()
     g.extend(line)
 
 
-l=Linkedlist()
+l=Linkedlist()#craeting a linked list object
 m=Linkedlist()
 n=input("enter the word to be searched for")
 flag=False
 
 for i in g:
-    l.add(i)
+    l.add(i)#adding the elements to the linked list
 l.display()
 print("init",l.size())
 sil=l.size()
 t=l
 if l.search(n)==True:
-    l.remove(n)
+    l.remove(n)#removing the element if found
 
 
 else:
     print("element not found adding the element")
-    l.add(n)
+    l.add(n)#adding the eelement if not found
     l.display()
 l.display()
 print("last",l.size())
-
-

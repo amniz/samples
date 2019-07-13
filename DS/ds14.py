@@ -2,44 +2,14 @@
 #@version:3.7
 #@purpose: prime numbers in range of 0-1000 using queue
 from RealQueue import Queue
-def isPrime():
-        l=[]
-        for i in range(10,1000):
-           if i==2:
-                l.append(i)
-           else:
-                j=2
-                while(j<=i):
-                    if i%j==0:
-                        break
-                       
-                    else:
-                          j+=1
+
+l=util.isPrime()
 
 
-                if j==i:
-                    l.append(i)
-        return l
-l=isPrime()
-
-def checkana(l):
-    ana=set()
-    cou=0
-    for i in l:
-        j=str(i)
-        k=sorted(j)
-        for j in [x for x in l[cou+1:len(l)]]:
-            h=str(j)
-            m=sorted(h)
-            if k==m:
-                ana.add(i)
-                ana.add(j)
-        cou+=1
-    return ana
-q=Queue()
-anag=checkana(l)
-g=sorted(anag)
+q=Queue()#creating an empty queue
+anag=util.checkana(l)#checking for anagram
+g=sorted(anag)#sorting the elements
 for i in g:
     #print(i)
-    Queue.add(q,i)
+    Queue.add(q,i)#adding the elements to the queue
 Queue.display(q)
