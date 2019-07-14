@@ -1,0 +1,49 @@
+{"rice": [{
+  "name": "jkrice",
+  "weight":"1kg",
+  "price per kg": "56"
+},
+  {
+    "name": "orice",
+    "weight":"1kg",
+    "price per kg": "47"
+  },
+  {
+    "name": "abcrice",
+    "weight":"1kg",
+    "price per kg": "77"
+  }],
+  "pulses":[ {
+    "name": "potato",
+    "weight": "1kg",
+    "price": "20"
+  },
+  {
+    "name": "tomato",
+    "weight": "1kg",
+    "price": "18"
+  },
+   {
+    "name": "onion",
+    "weight": "1kg",
+    "price": "30"
+  }],
+  "wheat": [{
+    "name": "fwheat",
+    "weight": "1kg",
+    "ppk": "28"
+
+  },
+  {
+    "name": "bwheat",
+    "weight": "1kg",
+    "ppk": "25"
+
+  },
+  {
+    "name": "cwheat",
+    "weight": "1kg",
+    "ppk": "18"
+
+  }]
+}
