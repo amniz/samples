@@ -1,15 +1,25 @@
-class Person:#person class for each element in the address book
+#person class for each element in the address book
+class Person:
+    # creating and initializing person
     def __init__(self):
-        self.first=input("enter the first name")#creating and inituializing person
+        self.first=input("enter the first name")
+        if self.first.isalnum():
+            raise ValueError
         self.last=input("enter the last name")
+        if self.last.isalnum():
+            raise ValueError
         self.address=input("enter the address")
         self.city=input("enter the city")
+        if self.city.isalnum():
+            raise ValueError
         self.state=input("enter the state")
+        if self.city.isalnum():
+            raise ValueError
         try:
             self.zip=int(input("enter the zip"))
             self.phonenumber=int(input("enter the phonenumber"))
-        except:
-            print("sorry invalid data")
+        except ValueError as e:
+            print("sorry invalid data",e)
 class AddressBook:#creating a class address book
     def __init__(self):
         self.page=[Person()]#adddress book has a person
