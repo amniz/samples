@@ -2,220 +2,237 @@ import random
 import math
 
 
-def randmgen(n):
+# function to generate random number and gives the output of number of heads and tails
+def random_number_generator(toss_times):
     tail = 0
     head = 0
-    while n > 0:  # tossing n number of times
+    while toss_times > 0:  # tossing n number of times
         rand = random.random()
         # print(rand)
         if rand >= 0.5:  # checking for heads
             head += 1
-            n -= 1
+            toss_times -= 1
         else:  # checking for tails
             tail += 1
-            n -= 1
+            toss_times -= 1
     return head, tail
 
 
-def leapyear(n):
-    if n % 400 == 0:  # checking whether divisble by 400
-        return "its a leap year"
-    elif n % 100 == 0:  # checking whether divisble by 100
-        return "its not a leap year"
-    elif n % 4 == 0:  # checking whether divisble by 4
-        return "its a leap year"
+# function to check whether a given year is leap year or not
+def leapyear(year):
+    if year % 400 == 0:  # checking whether divisible by 400
+        return "is a leap year"
+    elif year % 100 == 0:  # checking whether divisible by 100
+        return "is not a leap year"
+    elif year % 4 == 0:  # checking whether divisible by 4
+        return "is a leap year"
     else:
-        return "not a leap year"
+        return "is not a leap year"
 
 
-def twopow(n, t):
-    if n > 31 or n < 0:  # ensuring the number is between 0 and 31
+# function to print the powers of to and gives the output whether it is a leap year or not
+def two_power(number, times):
+    if number > 31 or number < 0:  # ensuring the number is between 0 and 31
         print("over flow")
     else:
-        while (t > 0):
-            print(t, end="")
-            print(leapyear(t))
+        while times > 0:
+            print(times, " ", end="")
+            print(leapyear(times))  # passing parameter to leap year to check whether the given year is leap year or not
             print(end="\n")
-            t = int(t / 2)
+            times = int(times / 2)
 
 
-def harmon(n):
-    t = 1
+# function to print the nth harmonic number
+def harmonic_number(number):
+    times = 1
     sum = 0
-    while (t <= n):  # generating and printing the harmonic number
-        sum = 1 / t
+    while times <= number:  # generating and printing the harmonic number
+        sum = 1 / times
 
-        print("1/", t, "=", 1 / t)
-        t += 1
+        print("1/", times, "=", 1 / times)
+        times += 1
     return sum
 
 
+# gambler function plays the game until gambler wins or lose the stake
 def gambler(stake, goal, time):
-    while (time > 0):  # playing n number of times
-        s = stake
-        g = goal
-        win = int()
-        loss = int()
-        count = int()
-        while (s > 0 and s < goal):  # playing a specific game untill goal reached or stakes runs out
+    count = int()
+    win = 0
+    loss = 0
+    while time > 0:  # playing n number of time
+
+        temperory_stake = stake
+        while temperory_stake > 0 and temperory_stake < goal:  # playing a specific game untill goal reached or stakes runs out
+            # print(time,"inside while")
             count += 1
-            rand = random.random()  # generating random numbers
-            # print(rand)
-            if rand >= 0.5:  # generating win
-                s += 1
+            random_number = random.random()  # generating random numbers
+            # print(random_number)
+            if random_number > 0.5:  # generating win
+                temperory_stake += 1
                 win += 1
                 # print("won")
             else:  # generating loss
-                s -= 1
+                temperory_stake -= 1
                 loss += 1
                 # print("loss")
+
+        print(time, "time-> win percentage is ", win / count)  # calculating win
+        print(time, "time-> loss percentage is ", loss / count)  # calculating loss
         time -= 1
-        print(time, "win", win / count)  # calculating win
-        print(time, "loss", loss / count)  # calculating loss
 
 
-def coupon(n):
-    s = "0qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"  # for generating random numbers
+# creates random coupon which is a mix of alpha numeric character
+def coupon(number_of_coupons):
+    coupon_string = "0qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890"  # for generating random numbers
     # print(s.length)
     # max=1000
     # print(len(s))
 
-    fin = set()  # avoiding duplicate elements
-    while n > 0:  # generating random numbers n number of times
+    final_set = set()  # avoiding duplicate elements
+    while number_of_coupons > 0:  # generating random numbers n number of times
         coupon = ""
         # print("n",n)
-        max1 = 10000
-        while max1 > 0:  # generating random number
+        max_value = 10000
+        while max_value > 0:  # generating random number
             rand = int(random.uniform(1, 62))  # generating a random number between 1 and 62
             # print(rand)
-            coupon += s[rand]  # appending the character to the string
-            max1 = int(max1 / rand)
+            coupon += coupon_string[rand]  # appending the character to the string
+            max_value = int(max_value / rand)
             # print(coupon)
-        fin.add(coupon)  # adding the coupon
-        n -= 1
-    return fin
+        final_set.add(coupon)  # adding the coupon
+        number_of_coupons -= 1
+    return final_set
 
 
-def Boolea(row, col):  # function to generate boolean array
-    a = []
-    while (row > 0):  # entering the elementts to the row
-        b = []
-        col1 = col
-        while (col1 > 0):  # entering the elements to the column
-            n = bool(input("enter the \row \col element"))
-            b.append(n)
-            col1 -= 1
-        a.append(list(b))  # adding the particular element
+# function which return a  boolean 2D array
+def Boolean_array(row, column):  # function to generate boolean array
+    array = []
+    while row > 0:  # entering the elementts to the row
+        temparory_row = []
+        temparory_column = column
+        while temparory_column > 0:  # entering the elements to the column
+            element = bool(input("enter the element if it is a true value else press enter"))
+            temparory_row.append(element)
+            temparory_column -= 1
+        array.append(list(temparory_row))  # adding the particular element
         row -= 1
-    print(a)
+    print(array)
 
 
-def Inte(row, col):  # function to generate integer array
-    a = []
-    while (row > 0):  # entering the elementts to the row
-        b = []
-        col1 = col
-        while (col1 > 0):  # entering the elements to the column
-            n = int(input("enter the \row \col element"))
-            b.append(n)
-            col1 -= 1
-        a.append(list(b))
+# function which returns the array of Integers
+def Integer_array(row, col):  # function to generate integer array
+    array = []
+    while row > 0:  # entering the elementts to the row
+        temparory_row = []
+        temparory_column = col
+        while temparory_column > 0:  # entering the elements to the column
+            element = int(input("enter the element"))
+            temparory_row.append(element)
+            temparory_column -= 1
+        array.append(list(temparory_row))
         row -= 1
-    print(a)
+    print(array)
 
 
-def Floa(row, col):  # function to generate double array
-    a = []
-    while (row > 0):  # entering the elementts to the row
-        b = []
-        col1 = col
-        while (col1 > 0):  # entering the elements to the column
-            n = float(input("enter the \row \col element"))
-            b.append(n)
-            col1 -= 1
-        a.append(list(b))  # adding the particular element
+# function which returns the array of float
+def Float_array(row, col):  # function to generate double array
+    array = []
+    while row > 0:  # entering the elementts to the row
+        temparory_row = []
+        temparory_column = col
+        while temparory_column > 0:  # entering the elements to the column
+            element = float(input("enter the element"))
+            temparory_row.append(element)
+            temparory_column -= 1
+        array.append(list(temparory_row))  # adding the particular element
         row -= 1
-    print(a)
+    print(array)
 
 
-def triplets(n):
-    li = []
-    m = []
-
-    while (n > 0):
-        li.append(int(input("enter the elmnt")))
-        n -= 1
-    for i in li:  # checking for the triplets which sum to zero
-        for j in li:
-            for k in li:
+# function to check for distinct triplets which sum to zero
+def check_triplets(number_of_elements):
+    element_list = []
+    final_list_of_triplets = []
+    while number_of_elements > 0:
+        element_list.append(int(input("enter the element")))
+        number_of_elements -= 1
+    for i in element_list:  # checking for the triplets which sum to zero
+        for j in element_list:
+            for k in element_list:
                 if i + j + k == 0:  # if triplets sum is zero then adding the elements
                     count = 0
-
-                    g = []
-                    g.append(i)
-                    g.append(j)
-                    g.append(k)
-                    p = tuple(g)
-
-                    m.insert(count, p)
+                    list_triplets = []
+                    list_triplets.append(i)
+                    list_triplets.append(j)
+                    list_triplets.append(k)
+                    temparory_tuple = tuple(list_triplets)
+                    final_list_of_triplets.insert(count, temparory_tuple)
                     # print(i,j,k)
                 else:
                     continue
-    sett = set(m)  # avoiding the duplicate elements
-    return sett
+    set_of_triplets = set(final_list_of_triplets)  # avoiding the duplicate elements
+    return set_of_triplets
 
 
-def dist(n, n1):
-    distance = math.sqrt(n ** n + n1 ** n1)  # calculating using the formula
+# function which calculate the distance between two points in euclidean plane
+def distance_calculation(first_point, second_point):
+    distance = math.sqrt(first_point ** first_point + second_point ** second_point)  # calculating using the formula
     return distance
 
 
-def check(l, n):  # checking for the winner
-    # print("id of l in check",id(l))
-    hum = 0
-    comp = 0
-    for i in range(3):
-        for j in range(1):  # checking through the rows human
-            if l[i][j] == 'x' and l[i][j + 1] == 'x' and l[i][j + 2] == 'x':
-                hum += 1
-    for i in range(3):  # checking through the row for comp
-        for j in range(1):
-            if l[i][j] == 'o' and l[i][j + 1] == 'o' and l[i][j + 2] == 'o':
-                comp += 1
-    for i in range(1):  # checking through the column for human
-        for j in range(3):
-            if l[i][j] == 'x' and l[i + 1][j] == 'x' and l[i + 2][j] == 'x':
-                hum += 1
-    for i in range(1):  # checking through the column for comp
-        for j in range(3):
-            if l[i][j] == 'o' and l[i + 1][j] == 'o' and l[i + 2][j] == 'o':
-                comp += 1
-    if l[0][0] == 'x' and l[1][1] == 'x' and l[2][2] == 'x' or l[0][2] == 'x' and l[1][1] == 'x' and l[2][1] == 'x':
-        hum += 1  # checking through the diagonal for human
-    if l[0][0] == 'o' and l[1][1] == 'o' and l[2][2] == 'o' or l[0][2] == 'o' and l[1][1] == 'o' and l[2][1] == 'o':
-        comp += 1  # checking through the diagonal for comp
-    if comp or hum == 1 and n < 3:  # checking for the winner
-        if hum > comp:
+# checking for the winner of the tic tac toe game
+def check_winner(tic_tac_toe, n):
+    human = 0
+    computer = 0
+    for row in range(3):
+        for column in range(1):  # checking through the rows human
+            if tic_tac_toe[row][column] == 'x' and tic_tac_toe[row][column + 1] == 'x' and tic_tac_toe[row][
+                column + 2] == 'x':
+                human += 1
+    for row in range(3):  # checking through the row for computer
+        for column in range(1):
+            if tic_tac_toe[row][column] == 'o' and tic_tac_toe[row][column + 1] == 'o' and tic_tac_toe[row][
+                column + 2] == 'o':
+                computer += 1
+    for column in range(1):  # checking through the column for human
+        for row in range(3):
+            if tic_tac_toe[column][row] == 'x' and tic_tac_toe[column + 1][row] == 'x' and tic_tac_toe[column + 2][
+                row] == 'x':
+                human += 1
+    for column in range(1):  # checking through the column for computer
+        for row in range(3):
+            if tic_tac_toe[column][row] == 'o' and tic_tac_toe[column + 1][row] == 'o' and tic_tac_toe[column + 2][
+                row] == 'o':
+                computer += 1
+    if tic_tac_toe[0][0] == 'x' and tic_tac_toe[1][1] == 'x' and tic_tac_toe[2][2] == 'x' or tic_tac_toe[0][
+        2] == 'x' and tic_tac_toe[1][1] == 'x' and tic_tac_toe[2][1] == 'x':
+        human += 1  # checking through the diagonal for human
+    if tic_tac_toe[0][0] == 'o' and tic_tac_toe[1][1] == 'o' and tic_tac_toe[2][2] == 'o' or tic_tac_toe[0][
+        2] == 'o' and tic_tac_toe[1][1] == 'o' and tic_tac_toe[2][1] == 'o':
+        computer += 1  # checking through the diagonal for computer
+    if computer or human == 1 and n < 3:  # checking for the winner
+        if human > computer:
             print("human wins")
-        elif comp > hum:
-            print("comp wins")
+        elif computer > human:
+            print("computer wins")
         else:
             print("match draw")
 
 
-def disptic(li):  # displaying the elements
-    print("id of li in disp", id(li))
-    for i in range(0, len(li)):
-        j = 0
-        while j < 3:
-            print(li[i][j], "|", end='')
-            j += 1
+# displaying the tic tac toe game
+def display_tic_tac_toe(tic_tac_toe):  # displaying the elements
+    for row in range(0, len(tic_tac_toe)):
+        column = 0
+        while column < 3:
+            print(tic_tac_toe[row][column], "|", end='')
+            column += 1
         print()
 
 
-def windchil(t, v):
-    if t < 50 and v < 120 and v > 3:  # using formula and calculating necessary
-        w = 35.74 + (0.6215 * t) + ((0.4275 * t) - 35.75) * v ** 0.16
-        return w
+# calculates the wind chill using the formula
+def windchill(temperature, wind_speed):
+    if temperature < 50 and wind_speed < 120 and wind_speed > 3:  # using formula and calculating necessary
+        wind_chill = 35.74 + (0.6215 * temperature) + ((0.4275 * temperature) - 35.75) * wind_speed ** 0.16
+        return wind_chill
     else:
-        return "cabnnot be calculated"
+        return "cannot be calculated"

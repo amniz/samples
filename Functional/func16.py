@@ -3,7 +3,7 @@
 #@purpose: prints the wind chil
 
 import sys
-from Functional.util import windchil
-t=int(sys.argv[1])#getting the input from the command prompt
-v=int(sys.argv[2])
-windchil(t,v)
+from Functional.util import windchill
+temperature=int(sys.argv[1])#getting the input from the command prompt
+wind_speed=int(sys.argv[2])
+print(windchill(temperature,wind_speed))

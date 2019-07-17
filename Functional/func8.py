@@ -7,5 +7,5 @@ try:
 except:
     n=int(input("please do enter a integer"))
 from Functional.util import coupon#importing coupon generator
-j=coupon(n)#getting the generated coupons
-print(j)
+coupon_number=coupon(n)#getting the generated coupons
+print("coupons genersted are",coupon_number)

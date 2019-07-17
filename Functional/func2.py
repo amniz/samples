@@ -1,10 +1,12 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: Flip Coin and print percentage of Heads and Tails
-from Functional.util import randmgen
+from Functional.util import random_number_generator
 try:#ensuring the person enters a number
-	n=int(input("enter the number of times you need to flip the coin"))
-except ValueError:
-	n=int(input("enter an integer"))
-h,t=randmgen(n)
-print("percent is",(h/t)*100)#printing the percentage of heads and tails
+	coin_flip_times=int(input("enter the number of times you need to flip the coin"))
+except ValueError as e:
+	print("enter an Integer value",e)
+head,tails=random_number_generator(coin_flip_times)
+print("Number of heads is",head)
+print("Number of tails is",tails)
+print("percent of head/tail is ",(head/tails)*100)#printing the percentage of heads and tails
