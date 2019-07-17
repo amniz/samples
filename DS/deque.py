@@ -41,12 +41,12 @@ class Deque:
 
 
     def removeFront(self):#removimg the element from the front from the dequeue
-        print("infront")
+
         if self.count == 0:
             return self.dq.data
         else:
             first = self.dq
-            print("firstrera",first.data)
+
             c = 1
             while first.prev != None:#going till the last element in the dequeue
                 first = first.prev
@@ -58,11 +58,11 @@ class Deque:
             dat=temp.data#deleting the last element
             temp.prev = None
             self.count -= 1
-            print("frontdat",dat)
+
 
 
     def removeRear(self):#removing the element from the rear of the dequeue
-        print("in rear")
+
         if self.count == 0:
             return self.dq.data
         else:
@@ -106,13 +106,13 @@ def main():
     l = Deque()
     s = input("enter the string")#asking the user to enter the string
     for i in s:
-        print("ooi", i)
+
         q.addFront(i)#adding the element at the front
         l.addRear(i)#adding the element at the rear
     q.display()
     l.display()
     le = l.size()
-    print(le)
+
     q1=q.dq.data
     l1=l.dq.data
     while le > 0:#traversing through list element by element and checking
@@ -127,7 +127,7 @@ def main():
 
             le-=1
         else:
-            print("in lese")
+
             break
     if le<=2:#checking for palindrome or not
         print("palindrome")

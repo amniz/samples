@@ -1,50 +1,51 @@
-#@author:Muhammed Nisamudheen
-#@version:3.7
-#@purpose: prints the claender of a given date using a 2d array.
-from util import util
+# @author:Muhammed Nisamudheen
+# @version:3.7
+# @purpose: prints the claender of a given date using a 2d array.
+from DS.util import util
 import sys
-m=int(sys.argv[1])
-y=int(sys.argv[2])
-k=util.daysofWeek(m,y)
-d=int(k)
-go=d+9
-days=[x for x in range(1,util.monthDay(m,y))]
-print("     python cal",m," ",y)
+
+month = int(sys.argv[1])  # getting the data using commandline
+year = int(sys.argv[2])
+start_day_of_mnth = util.daysofWeek(month, year)
+start_day_of_month = int(start_day_of_mnth)
+empty_space = start_day_of_month + 9   # adding space for the first 1-10 digits
+days = [x for x in range(1, util.monthDay(month, year))]
+print("     python cal", month, " ", year)
 print("    S   M  T   W  Th   F   S")
-li=[]
-val=42
-c=0
-while val>0:
-    g=[]
-    n=0
+calender = []
+val = 42  # 6*7 columns present in calender
+counter = 0
+while val > 0:
+    temp_array = []  # temparory array to add the elements and later to append to the calender for ensuring 2d array
+    row_counter = 0  # counter to break after each 6th element
 
-    while n<=6:
-        while d>0:
-            g.append(" ")
-            n+=1
-            val-=1
-            d-=1
-        try:
-            g.append(days[c])
-            c+=1
-            n+=1
-            val-=1
-        except:
-            g.append(" ")
-            c+=1
-            n+=1
-            val-=1
-    li.append(g)
+    while n <= 6:
+        while start_day_of_month > 0:  # adding the empty space
+            temp_array.append(" ")
+            row_counter += 1
+            val -= 1
+            start_day_of_month -= 1
+        try:  # appending the days in number
+            temp_array.append(days[counter])
+            counter += 1
+            row_counter += 1
+            val -= 1
+        except:  # when list index exception is thrown adding space
+            temp_array.append(" ")
+            counter += 1
+            row_counter += 1
+            val -= 1
+    calender.append(temp_array)
 
-for k in li:
+for dates in calender:
 
-    n=0
-    while n<=6:
-        if go>0:
-            print("  ",k[n],end="")
-            n+=1
-            go-=1
+    row_counter = 0   # counter to break after each 6th element
+    while row_counter <= 6:  # printing each row in the calender
+        if empty_space > 0:
+            print("  ", dates[n], end="")
+            row_counter += 1
+            empty_space -= 1
         else:
-            print(" ",k[n],end="")
-            n+=1
+            print(" ", dates[n], end="")
+            row_counter += 1
     print()

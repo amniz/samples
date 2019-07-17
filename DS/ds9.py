@@ -1,7 +1,7 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose: prints the calender using queue
-from Linkedlist import Linkedlist
+from DS.Linkedlist import Linkedlist
 from DS.RealQueue import Queue
 from DS.util import util
 

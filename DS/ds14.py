@@ -4,7 +4,7 @@
 from DS.RealQueue import Queue
 from DS.util import util
 
-l=util.isPrime()
+l=util.isPrime(0,1000)
 
 
 q=Queue()#creating an empty queue

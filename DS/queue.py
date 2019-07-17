@@ -60,22 +60,22 @@ class Queue:
     def check(self, cls):
         flag = True
         if flag:
-            n = input("is there anyone on the queue")#checking whether ayone is there in the queue
+            n = input("is there anyone on the queue if yes type True")#checking whether ayone is there in the queue
             if n == 'True':
                 self.enqueue(10)#adding the person in the queue
                 fw = int(input("1->deposit\n2->withdrawl"))#checking the purpose
                 if fw == 1:
                     damnt = int(input("enter the amount to be deposited"))
                     cls.bal += damnt#incrementing the bank bal
-                    print(cls.bal)
+                    print("total bank balance",cls.bal)
                     self.q.data += damnt#incrementing the person bal
-                    print(self.q.data)
-                    ch = bool(input("do you wish to continue for an another transaction"))
+                    print("amount deposited",self.q.data)
+                    ch = bool(input("do you wish to continue for an another transaction if yes type True"))
                     if ch == True:
                         self.check(self,cls)
                     else:
                         self.deque()
-                        flag = bool(input("is anyone in the queue"))#checking is there someone else in queue
+                        flag = bool(input("is anyone in the queue if yes type True"))#checking is there someone else in queue
                         if flag:
                             self.check(self,cls)
                         else:
@@ -83,24 +83,24 @@ class Queue:
                 elif fw == 2:
                     preva=randint(100,10000)
                     self.q.data=preva
-                    print(preva)
+                    print("your account balance is",preva)
                     wamnt = int(input("enter the amount to be withdrawn"))
                     if wamnt < cls.bal - 5000 and wamnt<preva:#checking the amount he can with draw
                         self.q.data -= wamnt#deducting the amount from his account
-                        print(self.q.data)
+                        print("your new balance is",self.q.data)
                         cls.bal -= wamnt#deducting the amount from the bank bal
-                        ch = bool(input("do you wish to continue for an another transaction"))
+                        ch = bool(input("do you wish to continue for an another transaction if yes type True"))
                         if ch == True:
                             self.check(self,cls)
                         else:
                             self.deque()
-                            flag = bool(input("is anyone in the queue"))
+                            flag = bool(input("is anyone in the queue if yes type True"))
                             if flag:#checking is there anyone in the queue
                                 self.check(self,cls)
                             else:
                                 return
                     else:#failed transaction if the person doesnot have the enough balanance
-                        print("transaction failed not enough bal")
+                        print("transaction failed not enough balance")
             else:
                 return
 

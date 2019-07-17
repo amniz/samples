@@ -24,7 +24,7 @@ class util:
     def monthDay(m,y):#getting the number of days in a particular month
         i=m
         if i==2:
-            if Leap(y):#checking whether the year is leap  year or not
+            if util.Leap(y):#checking whether the year is leap  year or not
                 return 30
             else:
                 return 29
