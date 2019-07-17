@@ -2,13 +2,13 @@
 #@version:3.7
 #@purpose: prime numbers in the range of 0-1000 using 2d array
 from DS.util import util
-r=[]
+array=[]
 for i in range(0,1000,100):
-    k=util.isPrime(i,i+100)
-    r.append(k)
-h=0
+    prime_numbers=util.isPrime(i,i+100)
+    array.append(prime_numbers)
+counter=0
 for i in range(0,1000,100):#getting the difference to the list correctly
 
     print("prime numbers in the range of",i,"and",i+100,":",end="")
-    print(r[h])
-    h+=1
+    print(array[counter])
+    counter+=1

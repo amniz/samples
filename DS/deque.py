@@ -15,18 +15,18 @@ class Deque:
 
     def addFront(self, data):#adding to the front of the dequeue
         if self.count == 0:#adding to the first if the dq is empty
-            print("adding initial data", data)
+
             self.dq.data = data
             self.count += 1
         else:
-            print("init add",self.dq)
+
             first = self.dq
             while first.prev != None:#adding the next element
                 first = first.prev
-            print("adding data", data)
+
             first.prev = Dnode(data, first, None)#creating element at the first position
             self.dq=first.prev
-            print("last add", self.dq)
+
             #print(self.dq.nexp.data)
     def addRear(self, data):#adding to the rear of the dequeue
         if self.count == 0:
@@ -47,14 +47,14 @@ class Deque:
         else:
             first = self.dq
 
-            c = 1
+            counter_to_delete = 1
             while first.prev != None:#going till the last element in the dequeue
                 first = first.prev
-                c += 1
+                counter_to_delete += 1
             temp = self.dq
-            while c > 2:#going till the element before the last element
+            while counter_to_delete > 2:#going till the element before the last element
                 temp = temp.prev
-                c -= 1
+                counter_to_delete -= 1
             dat=temp.data#deleting the last element
             temp.prev = None
             self.count -= 1
@@ -67,16 +67,16 @@ class Deque:
             return self.dq.data
         else:
             last = self.dq
-            k = 1
+            counter_to_delete_rear = 1
             while last.nexp != None:#going till the last element
                 last = last.nexp
-                k += 1
+                counter_to_delete_rear += 1
             temp = self.dq
 
-            while k > 1:#traversing till the element before the last element
+            while counter_to_delete_rear > 1:#traversing till the element before the last element
 
                 temp = temp.nexp
-                k-=1
+                counter_to_delete_rear-=1
             dat=temp.data#deleting the element
             temp.nexp = None
             self.count -= 1
@@ -102,34 +102,34 @@ class Deque:
 
 
 def main():
-    q = Deque()#creating an empty deque
-    l = Deque()
-    s = input("enter the string")#asking the user to enter the string
-    for i in s:
+    q_for_first_string = Deque()#creating an empty deque
+    q_for_last_string = Deque()
+    string = input("enter the string")#asking the user to enter the string
+    for i in string:
 
-        q.addFront(i)#adding the element at the front
-        l.addRear(i)#adding the element at the rear
-    q.display()
-    l.display()
-    le = l.size()
+        q_for_first_string.addFront(i)#adding the element at the front
+        q_for_last_string.addRear(i)#adding the element at the rear
+    q_for_first_string.display()
+    q_for_last_string.display()
+    size_last_string = q_for_last_string.size()
 
-    q1=q.dq.data
-    l1=l.dq.data
-    while le > 0:#traversing through list element by element and checking
-        if q1==l1:
+    first_string_data=q_for_first_string.dq.data
+    last_string_data=q_for_last_string.dq.data
+    while size_last_string > 0:#traversing through list element by element and checking
+        if first_string_data==last_string_data:
             #print("kooi",q.dq.data)
             #print(l.dq.data)
             #print("aa", q.dq.nexp.data)
-            q1=q.dq.nexp.data
+            first_string_data=q_for_first_string.dq.nexp.data
 
             #print("ab",l.dq.nexp.data)
-            l1=l.dq.nexp.data
+            last_string_data=q_for_last_string.dq.nexp.data
 
-            le-=1
+            size_last_string-=1
         else:
 
             break
-    if le<=2:#checking for palindrome or not
+    if size_last_string<2:#checking for palindrome or not
         print("palindrome")
     else:
         print("not palindrome")

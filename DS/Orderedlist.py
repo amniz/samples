@@ -6,12 +6,12 @@
 #list into a file.
 from DS.Linkedlist import Linkedlist
 try:
-    f=open("abc.txt","r")#reading from file
-    d=f.readlines()
+    file=open("abc.txt","r")#reading from file
+    d=file.readlines()
 except FileNotFoundError:
-    lr="hai hello how are you"
-    f=open("abc.txt","w")#if file not present creating a new one
-    wr=f.write(lr)
+    string="hai hello how are you"
+    file=open("abc.txt","w")#if file not present creating a new one
+    wr=file.write(string)
 g=[]
 for x in d:
     line=x.split()
