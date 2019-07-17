@@ -3,20 +3,21 @@
 #@purpose:Check using Stopwatch the Elapsed Time for every method call
 from Algorithms.util import util
 import time
-a=[1,2,3,4,5]
-arr=[2,1,4,6,3]
-h=len(a)
-l=0
-k=4
-tbs=time.time()#getting the time since epoch
-util.BinarySearch(a,h,l,k)
-tbs1=time.time()#getting the time since epoch
-print(tbs1-tbs)#substracting both the time and finding the time elapsed
-tbs=time.time()#getting the time since epoch
-util.Insertionsort(arr)
-tbs1=time.time()#getting the time since epoch
-print("time elapsed by insertion sort",tbs1-tbs)
-tbs=time.time()#getting the time since epoch
-util.Insertionsort(arr)
-tbs1=time.time()#getting the time since epoch
-print("time elapsed by bubble sort",tbs1-tbs)
+
+array_for_binarysearch=[1,2,3,4,5]
+unsorted_list=[2,1,4,6,3]
+last_element=len(array_for_binarysearch)
+first_element=0
+key=4
+start_time=time.time()#getting the time since epoch
+util.BinarySearch(array_for_binarysearch,last_element,first_element,key)
+end_time=time.time()#getting the time since epoch
+print("timpe elapsed by binary search",end_time-start_time)#substracting both the time and finding the time elapsed
+start_time=time.time()#getting the time since epoch
+util.Insertionsort(unsorted_list)
+end_time=time.time()#getting the time since epoch
+print("time elapsed by insertion sort",end_time-start_time)
+start_time=time.time()#getting the time since epoch
+util.Insertionsort(unsorted_list)
+end_time=time.time()#getting the time since epoch
+print("time elapsed by bubble sort",end_time-start_time)

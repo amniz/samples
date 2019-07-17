@@ -3,6 +3,6 @@
 #@purpose: Anagram Detection
 
 from Algorithms.util import util
-str1=input("enter string 1")#getting the input from the user
-str2=input("enter string 2")#getting the input from the user
-util.anagram(str1,str2)#checking for anagram
+string1=input("enter first string")#getting the input from the user
+string2=input("enter second string ")#getting the input from the user
+util.anagram(string1,string2)#checking for anagram

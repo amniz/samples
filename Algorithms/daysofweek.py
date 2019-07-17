@@ -4,10 +4,10 @@
 
 import sys
 from Algorithms.util import  util
-m=int(sys.argv[1])#getting the parametrs from command line
-d=int(sys.argv[2])#getting the parametrs from command line
-y=int(sys.argv[3])#getting the parametrs from command line
+month=int(sys.argv[1])#getting the parametrs from command line
+day=int(sys.argv[2])#getting the parametrs from command line
+year=int(sys.argv[3])#getting the parametrs from command line
 
-util.daysofWeek(m,d,y)
+util.daysofWeek(month,day,year)
 
     
