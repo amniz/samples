@@ -55,6 +55,10 @@ class player:
         cards=deckofcard()
         cards.sort(key=self.sort)
         print(cards)
-c=player()
-c.palyer()
+def main():
+    c=player()
+    c.palyer()
+if __name__=="__main__":
+    main()
+
 

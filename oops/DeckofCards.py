@@ -41,7 +41,9 @@ def deckofcard():
 
     return list_for_adding_all_pair_cards
 
-
-cards = deckofcard()
-for counter in range(0, 4):
-    print("cards of player", counter + 1, "->", cards[counter])
+def main():
+    cards = deckofcard()
+    for counter in range(0, 4):
+        print("cards of player", counter + 1, "->", cards[counter])
+if __name__=="__main__":
+    main()

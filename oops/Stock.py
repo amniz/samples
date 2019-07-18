@@ -3,7 +3,7 @@
 # @purpose:getting the stock report and printing it on the file
 
 class Stock:#class for creating then stock
-    cOMPANYName=None
+    CompanyName=None
     tNumberofShares=None
     CShareprice=None
     def __init__(self,Stockname,Numberofshare,Shareprice):#initializing the members of the stock

@@ -160,9 +160,13 @@ class Clinique():
             self.patient_details(phno=ph)
 
 
-clinique = Clinique()
-number_of_doctors = int(input("enter the number of doctors"))
-for i in range(number_of_doctors):
-    clinique.add_doctor()
+def main():
+    clinique = Clinique()
+    number_of_doctors = int(input("enter the number of doctors"))
+    for i in range(number_of_doctors):
+        clinique.add_doctor()
 
-clinique.search_doctor()
+    clinique.search_doctor()
+if __name__=="__main__":
+    main()
+

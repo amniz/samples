@@ -141,13 +141,15 @@ class AddressBook:
             counter -= 1
 
 
-
-number_of_pages = int(input("enter the number of persons to be entered to the address book"))-1
-address_book = AddressBook()
-for pages in range(number_of_pages):
-    address_book.add()
-address_book.display_addressbook()
-address_book.sort()
-address_book.display_addressbook()
-address_book.delete()
-address_book.display_addressbook()
+def main():
+    number_of_pages = int(input("enter the number of persons to be entered to the address book"))-1
+    address_book = AddressBook()
+    for pages in range(number_of_pages):
+        address_book.add()
+    address_book.display_addressbook()
+    address_book.sort()
+    address_book.display_addressbook()
+    address_book.delete()
+    address_book.display_addressbook()
+if __name__=="__main__":
+    main()
