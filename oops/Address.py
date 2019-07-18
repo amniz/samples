@@ -50,12 +50,12 @@ class AddressBook:
     # editing the details of the person in the address book
     def edit_addressbook(self):
         firstname = input("enter the first_name name of the person")  # getting the necessary details for the edit
-        lname = input("enter the lname of the person")
+        lastname = input("enter the lastname of the person")
         length_of_addressbook = len(self.page_in_addressbook)
         counter = 0
         while length_of_addressbook > 0:  # finding the particular element
             if self.page_in_addressbook[counter].first_name == firstname and self.page_in_addressbook[
-                counter].last_name == lname:
+                counter].last_name == lastname:
                 user_selection = int(input(
                     "enter the option you need to edit_addressbook 1->address\n2->city\n3->state\n4->zip\n5->phone_number"))
                 if user_selection == 1:
