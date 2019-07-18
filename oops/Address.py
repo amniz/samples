@@ -135,9 +135,9 @@ class AddressBook:
         counter = length_of_address_book
         while counter > 1:
             if input_for_sort == 1:
-                self.page_in_addressbook.sort(key=lambda Person: Person.last_name)
+                self.page_in_addressbook.sort(key=lambda Person: (Person.last_name,Person.first_name))
             elif input_for_sort == 2:
-                self.page_in_addressbook.sort(key=lambda Person: Person.zip)
+                self.page_in_addressbook.sort(key=lambda Person: (Person.zip,Person.first_name))
             counter -= 1
 
 
