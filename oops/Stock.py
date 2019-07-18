@@ -1,3 +1,7 @@
+# @author:Muhammed Nisamudheen
+# @version:3.7
+# @purpose:getting the stock report and printing it on the file
+
 class Stock:#class for creating then stock
     cOMPANYName=None
     tNumberofShares=None

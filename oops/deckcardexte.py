@@ -1,7 +1,7 @@
 #@author:Muhammed Nisamudheen
 #@version:3.7
 #@purpose:implementation of queue using linked list
-from DeckofCards import deckofcard
+from oops.DeckofCards import deckofcard
 
 # creating node class
 class Node:
@@ -37,7 +37,7 @@ class Queue:
         print(l.data)
 class player:
     @staticmethod
-    def so(cards):
+    def sort(cards):
         print("olakka")
         if 'Ace' in cards:
             return 5
@@ -53,7 +53,7 @@ class player:
     def palyer(self):
         print("hai")
         cards=deckofcard()
-        cards.sort(key=self.so)
+        cards.sort(key=self.sort)
         print(cards)
 c=player()
 c.palyer()
