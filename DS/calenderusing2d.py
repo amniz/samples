@@ -1,7 +1,10 @@
 # @author:Muhammed Nisamudheen
 # @version:3.7
 # @purpose: prints the claender of a given date using a 2d array.
-from DS.util import util
+try:
+    from DS.util import util
+except:
+    from util import util
 import sys
 
 month = int(sys.argv[1])  # getting the data using commandline
