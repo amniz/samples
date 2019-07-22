@@ -21,6 +21,6 @@ from .views import register
 urlpatterns = [
 
     path('admin/', admin.site.urls),
-    path('api/login',login),
-    path('api/register',register),
+    path('api/login',login),  # mapping the url for login
+    path('api/register',register),  # mapping the url for registeration
 ]

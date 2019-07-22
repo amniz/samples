@@ -33,20 +33,20 @@ def login(request): # allows the user for login
 @api_view(["POST"])
 @permission_classes((AllowAny,))
 def register(request):
-    try:
+    try:  # checking for the data is correct or not
         result = {
             "message":"",
             "success": "",
         }
-        username=request.data.get("username")
+        username=request.data.get("username")  # getting user name and necessary data
         password=request.data.get("password")
         firstname=request.data.get("firstname")
         lastname=request.data.get("lastname")
         email=request.data.get("email")
-        if not username:
+        if not username:  # error checking whether user name is correct or not
             result['message'] = "Username id required.."
             result['success'] = False
-            return Response(result, status=HTTP_400_BAD_REQUEST)
+            return Response(result, status=HTTP_400_BAD_REQUEST)  # if user name null the returning a bad request
 
         if not email:
             if not email:
@@ -69,8 +69,8 @@ def register(request):
                 result['success'] = False
                 return Response(result, status=HTTP_400_BAD_REQUEST)
         user=User.objects.create_user(username=username,first_name=firstname,last_name=lastname,email=email)
-        user.set_password(password)
-        user.is_active = False
+        user.set_password(password)  # encrypting the password by hasing
+        user.is_active = False  # making is active false untill the email is validated
         user.save()
 
         # token, _ = Token.objects.get_or_create(user=user)
