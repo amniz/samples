@@ -3,3 +3,4 @@
 *.swp
 *.iml
 *.env
+node_modules/
